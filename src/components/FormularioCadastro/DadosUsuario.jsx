@@ -14,7 +14,7 @@ function DadosUsuario(){
             variant="outlined"
             margin="normal"
             fullWidth/>
-            <Button type="submit" variant="container" color="primary">Cadastrar</Button>
+            <Button type="submit" variant="contained" color="primary">Cadastrar</Button>
         </form>
     );
 }
