@@ -19,7 +19,7 @@ function FormularioCadastro({aoEnviar, validarCPF}) {
   
   return (
     <>
-      {formularios([etapaAtual])}
+      {formularios[etapaAtual]}
     </>
   );
 }
