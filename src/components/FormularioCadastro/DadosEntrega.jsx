@@ -1,37 +1,67 @@
 import { Button, TextField } from '@material-ui/core';
-import React from 'react'
+import React, { useState } from 'react'
 
-function DadosEntrega(){
+function DadosEntrega({aoEnviar}){
+
+    const[cep,setCep] = useState("");
+    const[endereco,setEndereco] = useState("");
+    const[cidade,setCidade] = useState("");
+    const[numero,setNumero] = useState("");
+    const[estado,setEstado] = useState("");
+
     return(
-        <form>
+        <form onSubmit={(event) => {
+            event.preventDefault();
+            aoEnviar({cep,endereco,numero,cidade,estado})
+        }}>
             <TextField 
+                value={cep}
+                onChange={(event) => {
+                    setCep(event.target.value)
+                }}
                 id="cep" 
                 label="cep" type="number" 
                 variant="outlined"
                 margin="normal"
                 fullWidth
             />
-            <TextField 
+            <TextField
+                value={endereco}
+                onChange={(event) => {
+                    setEndereco(event.target.value)
+                }} 
                 id="endereco" 
                 label="endereco" type="text" 
                 variant="outlined"
                 margin="normal"
                 fullWidth
             />
-            <TextField 
+            <TextField
+                value={numero}
+                onChange={(event) => {
+                    setNumero(event.target.value)
+                }} 
                 id="numero" 
                 label="numero" type="number" 
                 variant="outlined"
                 margin="normal"
             />
-            <TextField 
+            <TextField
+                value={estado}
+                onChange={(event) => {
+                    setEstado(event.target.value)
+                }} 
                 id="estado" 
                 label="estado" type="text" 
                 variant="outlined"
                 margin="normal"
             />
 
-            <TextField 
+            <TextField
+                value={cidade}
+                onChange={(event) => {
+                    setCidade(event.target.value)
+                }} 
                 id="cidade" 
                 label="cidade" type="text" 
                 variant="outlined"
